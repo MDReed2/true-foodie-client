@@ -12,6 +12,135 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <!-- <h1>True Foodie</h1> -->
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">
+            <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="True Foodie">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="d-flex collapse navbar-collapse flex-row-reverse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a id="sign-up" class="nav-link" href="#">Sign Up <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item">
+                <a id="sign-in" class="nav-link" href="#">Sign-in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <section>
+          <div id="error-message">
+        
+          </div>
+          <div id="user-display">
+        
+          </div>
+        </section>
+        <section id="before-sign-in">
+          <!-- Sign-up form goes here -->
+          <div class="card sign-up-card">
+            <form id="sign-up" class="card-body">
+              <h3>Sign Up</h3>
+        
+              <div>
+                <label for="sign-up-email">Email:</label>
+                <input type="email" id="sign-up-email" name="credentials[email]" required>
+              </div>
+              <div>
+                <label for="sign-up-password">Password:</label>
+                <input type="password" id="sign-up-password" name="credentials[password]" required>
+              </div>
+              <div>
+                <label for="password_confirmation">Password Confirmation:</label>
+                <input type="password" id="password_confirmation" name="credentials[password_confirmation]" required>
+              </div>
+        
+              <button class="btn btn-dark">Sign Up</button>
+            </form>
+          </div>
+        
+        
+          <!-- Sign in -->
+          <div class="card sign-in-card">
+            <form id="sign-in" class="card-body">
+              <h3>Sign In</h3>
+              <div>
+                <label for="sign-in-email">Email:</label>
+                <input type="email" id="sign-in-email" name="credentials[email]" required>
+              </div>
+              <div>
+                <label for="sign-in-password">Password:</label>
+                <input type="password" id="sign-in-password" name="credentials[password]" required>
+              </div>
+        
+              <button class="btn btn-dark">Sign-in</button>
+            </form>
+          </div>
+        
+          <p id="pre-sign-up">Need an account? <button class="btn btn-outline-light btn-sm">Sign Up</button></p>
+          <p id="back-to-sign-in"><button class="btn btn-outline-light btn-sm">Back to Sign In</button></p>
+        </section>
+      </main>
+      
+      <!-- Change password and sign out section. This section should only show once signed in. By default should be hidden -->
+      <section id="after-sign-in">
+        <form id="change-password" class="border">
+          <fieldset>
+            <legend>Change Password</legend>
+            <label for="current-password">Current Password:</label>
+            <input type="password" name="credentials[old]" placeholder="Current Password">
+      
+            <label for="new-password">Current Password:</label>
+            <input type="password" name="credentials[new]" placeholder=" New Password">
+            <button class="btn btn-primary">Change Password</button>
+          </fieldset>
+        </form>
+      
+        <form id="sign-out" class="border">
+          <button class="btn btn-primary">Sign Out</button>
+        </form>
+
+        <h2>Create One Menu Item</h2>
+        <form id="menu-create" class="border">
+          <fieldset>
+            <input type="text" name="menu[menu]" placeholder="Enter Menu Name">
+            <input type="text" name="menu[name]" placeholder="Enter Dish Name">
+            <input type="text" name="menu[description]" placeholder="Enter Menu Description">
+            <input type="text" name="menu[calories]" placeholder="Calories">
+            <input type="text" name="menu[price]" placeholder="Price">
+            <input type="submit" value="Create Menu">
+          </fieldset>
+        </form>
+      
+        <h2>Get All Menus</h2>
+        <form class="menu" id="menu-search">
+          <div class="form-group">
+          </div>
+          <button type="submit" class="btn btn-default">Get All Menus</button>
+        </form>
+      </section>
+      
+      <!-- <section>
+        <div id="error-message">
+      
+        </div>
+        <div id="menu-display">
+      
+        </div>
+      </section> -->
     </body>
 </html>
