@@ -13,10 +13,10 @@ const signUpSuccess = function (responseData) {
 }
 
 const signUpFailure = function (error) {
-	$('#error-message').text('Sign up failed')
+	$('#error-menu').text('Sign up failed')
 
-	$('#error-message').removeClass()
-	$('#error-message').addClass('text-danger')
+	$('#error-menu').removeClass()
+	$('#error-menu').addClass('text-danger')
 	console.error('Error is', error)
 }
 
@@ -40,14 +40,14 @@ const signInSuccess = function (responseData) {
 }
 
 const signInFailure = function (error) {
-	$('#error-message').text(
+	$('#error-menu').text(
 		'Sign in unsuccessful. Please ensure credentials are correct.'
 	)
 
-	$('#error-message').removeClass()
-	$('#error-message').addClass('text-danger')
+	$('#error-menu').removeClass()
+	$('#error-menu').addClass('text-danger')
 
-  setTimeout(() => $('#error-message').text(''), 3000)
+  setTimeout(() => $('#error-menu').text(''), 3000)
 
 	console.error('Error is', error)
 }
@@ -65,12 +65,12 @@ const changePasswordSuccess = function (responseData) {
 }
 
 const changePasswordFailure = function (error) {
-	$('#error-message').text('Password change failed')
+	$('#error-menu').text('Password change failed')
 
-	$('#error-message').removeClass()
-	$('#error-message').addClass('text-danger')
+	$('#error-menu').removeClass()
+	$('#error-menu').addClass('text-danger')
 
-  setTimeout(() => $('#error-message').text(''), 3000)
+  setTimeout(() => $('#error-menu').text(''), 3000)
 	console.error('Error is', error)
 }
 
@@ -89,10 +89,10 @@ const signOutSuccess = function (responseData) {
 }
 
 const signOutError = function (error) {
-	$('#error-message').text('There was a error signing you out')
+	$('#error-menu').text('There was a error signing you out')
 
-	$('#error-message').removeClass()
-	$('#error-message').addClass('text-danger')
+	$('#error-menu').removeClass()
+	$('#error-menu').addClass('text-danger')
 	console.error('Error is', error)
 }
 

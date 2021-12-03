@@ -29,7 +29,7 @@
                 <a id="sign-up" class="nav-link" href="#">Sign Up <span class="sr-only"></span></a>
               </li>
               <li class="nav-item">
-                <a id="sign-in" class="nav-link" href="#">Sign-in</a>
+                <a id="sign-in-btn" class="nav-link" href="#">Sign-in</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Pricing</a>
@@ -117,7 +117,8 @@
         <h2>Create One Menu Item</h2>
         <form id="menu-create" class="border">
           <fieldset>
-            <input type="text" name="menu[menu]" placeholder="Enter Menu Name">
+            <label for="menu-category">Menu Category:</label>
+            <input type="text" name="menu[category]" placeholder="Enter Menu Category">
             <input type="text" name="menu[name]" placeholder="Enter Dish Name">
             <input type="text" name="menu[description]" placeholder="Enter Menu Description">
             <input type="text" name="menu[calories]" placeholder="Calories">
@@ -134,13 +135,13 @@
         </form>
       </section>
       
-      <!-- <section>
-        <div id="error-message">
+      <section>
+        <div id="error-menu">
       
         </div>
         <div id="menu-display">
       
         </div>
-      </section> -->
+      </section>
     </body>
 </html>
