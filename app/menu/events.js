@@ -5,7 +5,9 @@ const ui = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields.js')
 
 // Show every menu (an index or list action)
-const onIndexMenus = function () {
+const onIndexMenus = function (event) {
+	event.preventDefault()
+
 	// make API call to get all of the menus
 	api
 		.index()

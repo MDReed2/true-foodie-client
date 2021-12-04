@@ -21,6 +21,7 @@ const onIndexSuccess = function (responseData) {
 		// add a data-id attribute for our dynamic edit form as well
 		menusHtml += `
       <h4>Menu Category: ${menu.category}</h4>
+			<p>ID: ${menu.id}</p>
       <p>Name: ${menu.name}</p>
       <p>Description: ${menu.description}</p>
       <p>Calories: ${menu.calories}</p>
@@ -63,7 +64,7 @@ const onShowSuccess = function (responseData) {
 
 const onDestroySuccess = function () {
 	// add success message to our menu-destroy-message element
-	$('#menu-destroy-message').html('Menu successfully deleted!')
+	$('#menu-display').html('Menu successfully deleted!')
 
 	// empty out the menu-display element in case it was displaying information
 	$('#menu-display').html(
@@ -71,13 +72,13 @@ const onDestroySuccess = function () {
 	)
 
 	// add class for success messaging
-	$('#menus-destroy-message').addClass('success')
+	$('#menu-display').addClass('success')
 
 	// use setTimeout to allow the success message to stay for 5 seconds before
 	// the message is replaced with '' and the 'success' class is removed
 	setTimeout(() => {
-		$('#menus-destroy-message').html('')
-		$('#menus-destroy-message').removeClass('success')
+		$('#menu-display').html('')
+		$('#menu-display').removeClass('success')
 	}, 5000)
 
 	// reset all forms
@@ -96,7 +97,7 @@ const onUpdateSuccess = function (responseData) {
 	)
 
 	// add class for success messaging
-	$('#menu-update-message').addClass('success')
+	$('#menu-display').addClass('success')
 
 	// use setTimeout to allow the success message to stay for 5 seconds before
 	// the message is replaced with '' and the 'success' class is removed
@@ -110,24 +111,38 @@ const onUpdateSuccess = function (responseData) {
 }
 
 const onCreateSuccess = function () {
+	const menu = responseData.menu;
+
+
 	// add success message to content
 	$('#menu-create-message').html('You created a new menu item!')
 
 	// we just created a new menu!
 	// we can add a message to let the users know they should request all of
 	// the menus again to see the newly created menu included
-	$('#menu-display').html(
-		'Menus have changed! Click "Get All Menus" again to see all the menu.'
-	)
+	const menuCreateHtml = `
+  	<div>
+        <h4>Menu Category: ${menu.category}</h4>
+			<p>ID: ${menu._id}</p>
+      <p>Name: ${menu.name}</p>
+      <p>Description: ${menu.description}</p>
+      <p>Calories: ${menu.calories}</p>
+      <p>Price: ${menu.price}</p>
+      <br>
+			<p>Menus have changed! Click "Get All Menus" again to see all the menu.</p>
+		</div>
+  `
+
+	$('#menu-display').html(menuCreateHtml)
 
 	// add class for success messaging
-	$('#menu-create-message').addClass('success')
+	$('#menu-display').addClass('success')
 
 	// use setTimeout to allow the success message to stay for 5 seconds before
 	// the message is replaced with '' and the 'success' class is removed
 	setTimeout(() => {
-		$('#menu-create-message').html('')
-		$('#menu-create-message').removeClass('success')
+		$('#menu-display').html('')
+		$('#menu-display').removeClass('success')
 	}, 5000)
 
 	// reset all forms
@@ -140,16 +155,16 @@ const onError = function (err) {
 
 	// display a message to the user to let them know what they were doing did
 	// not work correctly
-	$('#error-message').html('Something went wrong, please try again.')
+	$('#error-menu').html('Something went wrong, please try again.')
 
 	// add class for error messaging
-	$('#error-message').addClass('failure')
+	$('#error-menu').addClass('failure')
 
 	// use setTimeout to allow the error message to stay for 5 seconds before
 	// the message is replaced with '' and the 'failure' class is removed
 	setTimeout(() => {
-		$('#error-message').html('')
-		$('#error-message').removeClass('failure')
+		$('#error-menu').html('')
+		$('#error-menu').removeClass('failure')
 	}, 5000)
 
 	// reset all forms
@@ -162,5 +177,5 @@ module.exports = {
 	onDestroySuccess,
 	onUpdateSuccess,
 	onCreateSuccess,
-	onError,
+	onError
 }

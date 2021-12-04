@@ -5,11 +5,11 @@ const store = require('../store')
 
 const create = function (menuData) {
   return $.ajax({
-		url: config.apiUrl + '/menus',
+		url: config.apiUrl + '/menu',
 		method: 'POST',
-		// headers: {
-		// 	Authorization: 'Bearer ' + store.user.token,
-		// },
+		headers: {
+			Authorization: 'Bearer ' + store.user.token,
+		},
     data: menuData
 	})
 }
@@ -24,7 +24,7 @@ const index = function () {
 // getting a single resource is commonly called a show or retrieve action
 const show = function (id) {
   return $.ajax({
-    url: config.apiUrl + '/menu/' + id,
+    url: config.apiUrl + '/menus/' + id,
     method: 'GET'
   })
 }
