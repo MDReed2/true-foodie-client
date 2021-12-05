@@ -25,13 +25,13 @@ const signInSuccess = function (responseData) {
 	store.user = responseData.user
 	console.log('store is ', store)
 
-	$('#menu-display').text('You have been successfully signed in!')
+	$('#after-sign-in-message').text('You have been successfully signed in!')
 
-	$('#menu-display').removeClass()
-	$('#menu-display').addClass('text-success')
+	$('#after-sign-in-message').removeClass()
+	$('#after-sign-in-message').addClass('text-success')
 	$('form').trigger('reset')
 
-  setTimeout(() => $('#menu-display').text(''), 3000)
+  setTimeout(() => $('#after-sign-in-message').text(''), 3000)
 
 	// Before signing in hide the section with the id `before-sign-in`
 	$('#before-sign-in').hide()

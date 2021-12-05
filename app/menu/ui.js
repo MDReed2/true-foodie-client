@@ -20,18 +20,21 @@ const onIndexSuccess = function (responseData) {
 		// button we want to delete
 		// add a data-id attribute for our dynamic edit form as well
 		menusHtml += `
-      <h4>Menu Category: ${menu.category}</h4>
-			<p>ID: ${menu.id}</p>
+      <h4>Menu Category: ${menu.menu}</h4>
+			<p>ID: ${menu._id}</p>
       <p>Name: ${menu.name}</p>
       <p>Description: ${menu.description}</p>
       <p>Calories: ${menu.calories}</p>
       <p>Price: ${menu.price}</p>
-      <form class="menus-update-dynamic" data-id=${menus._id}>
+      <form id="menu-update" class="menus-update-dynamic" data-id=${menu._id}>
         <input type="text" name="menu[category]" placeholder="Menu Category" required>
         <input type="text" name="menu[name]" placeholder="Name of dish" required>
-        <button type="submit">Update Dish</button>
+				<input type="text" name="menu[description]" placeholder="Description">
+				<input type="number" name="menu[calories]" placeholder="Calories">
+				<input type="text" name="menu[price]" placeholder="Price">
+        <button>Update Dish</button>
       </form>
-      <button class='menu-destroy-dynamic' data-id=${menus._id}>Delete Menu Item</button>
+      <button class='menu-destroy-dynamic' data-id=${menu._id}>Delete Menu Item</button>
       <br>
     `
 	})
@@ -46,7 +49,7 @@ const onShowSuccess = function (responseData) {
 	console.log(responseData)
 
 	// build HTML element with data for one menu
-	const menusHtml = `
+	menusHtml += `
     <h4>Menu: ${responseData.menu.category}</h4>
     <p>Name: ${responseData.menu.name}</p>
     <p>Description: ${responseData.menu.description}</p>
@@ -76,10 +79,10 @@ const onDestroySuccess = function () {
 
 	// use setTimeout to allow the success message to stay for 5 seconds before
 	// the message is replaced with '' and the 'success' class is removed
-	setTimeout(() => {
-		$('#menu-display').html('')
-		$('#menu-display').removeClass('success')
-	}, 5000)
+	// setTimeout(() => {
+	// 	$('#menu-display').html('')
+	// 	$('#menu-display').removeClass('success')
+	// }, 5000)
 
 	// reset all forms
 	$('form').trigger('reset')
@@ -110,9 +113,10 @@ const onUpdateSuccess = function (responseData) {
 	$('form').trigger('reset')
 }
 
-const onCreateSuccess = function () {
-	const menu = responseData.menu;
+const onCreateSuccess = function (responseData) {
+	const menu = responseData.menu
 
+	let menusHtml = ''
 
 	// add success message to content
 	$('#menu-create-message').html('You created a new menu item!')
@@ -120,9 +124,9 @@ const onCreateSuccess = function () {
 	// we just created a new menu!
 	// we can add a message to let the users know they should request all of
 	// the menus again to see the newly created menu included
-	const menuCreateHtml = `
+	menusHtml += `
   	<div>
-        <h4>Menu Category: ${menu.category}</h4>
+      <h4>Menu Category: ${menu.category}</h4>
 			<p>ID: ${menu._id}</p>
       <p>Name: ${menu.name}</p>
       <p>Description: ${menu.description}</p>
@@ -133,17 +137,10 @@ const onCreateSuccess = function () {
 		</div>
   `
 
-	$('#menu-display').html(menuCreateHtml)
+	$('#menu-display').html(menusHtml)
 
 	// add class for success messaging
 	$('#menu-display').addClass('success')
-
-	// use setTimeout to allow the success message to stay for 5 seconds before
-	// the message is replaced with '' and the 'success' class is removed
-	setTimeout(() => {
-		$('#menu-display').html('')
-		$('#menu-display').removeClass('success')
-	}, 5000)
 
 	// reset all forms
 	$('form').trigger('reset')
