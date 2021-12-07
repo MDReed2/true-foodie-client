@@ -4,7 +4,8 @@
     box-sizing: border-box;
 }
 html {
-  background: linear-gradient(#f2f2f2, #f2f2f2) no-repeat center center fixed !important;
+  background: url('https://i.imgur.com/mFOVMrX.png');
+  // background: linear-gradient(#f2f2f2, #f2f2f2) no-repeat center center fixed !important;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -15,25 +16,6 @@ html {
 
 body {
   background-color: transparent;
-  // padding: 2rem;
-
-    .container {
-      width: 600px;
-
-      .row {
-        justify-content: center;
-
-        div {
-          width: 185px;
-          height: 185px;
-
-          @media (max-width: 768px) {
-            width: 100px;
-            height: 100px;
-          }
-        }
-      }
-    }
 }
 header {
   background-color: #000000;
@@ -41,12 +23,13 @@ header {
   padding: 1rem;
   text-align: center;
   margin-bottom: 1.5rem;
+  box-shadow: 8px 10px 8px 1px rgba(49, 49, 49, .6);
 }
 
 main{
-  display: grid;
-  justify-content: center;
-  padding-bottom: 2rem;
+  // display: grid;
+  // justify-content: center;
+  // padding-bottom: 2rem;
 
   section:nth-child(1) {
     display: flex;
@@ -54,35 +37,40 @@ main{
     margin-bottom: 2rem;
   }
 
-  .card {
-    background-color: transparent;
-    margin-bottom: 1rem;
-    min-width: 315px;
+  #before-sign-in {
+    display: grid;
+    justify-content: center;
+    padding-bottom: 2rem;
 
-    &.sign-up-card {
-      display: none;
-    }
+    .card {
+      background-color: rgba(20, 160, 152, .7);
+      margin-bottom: 1rem;
+      min-width: 315px;
 
-    form {
-      &.border {
-        border: none !important;
+      &.sign-up-card {
+        display: none;
       }
 
-      h3 {
-        text-align: center;
-      }
+      form {
+        &.border {
+          border: none !important;
+        }
 
-      div {
-        display: flex;
-        flex-direction: column;
+        h3 {
+          text-align: center;
+        }
 
-        input {
-          display: inline-block;
-          border-radius: 5px;
-          margin-bottom: 1rem;
+        div {
+          display: flex;
+          flex-direction: column;
+
+          input {
+            display: inline-block;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+          }
         }
       }
-
     }
   }
 
@@ -94,9 +82,16 @@ main{
     }
   }
 
-  #pre-sign-up, #back-to-sign-in {
-    text-align: center;
+  .needAccount {
+    // background: rgba(242, 242, 242, .6);
+    // border-radius: 3px;
+    // padding: 3px;
+
+    #pre-sign-up, #back-to-sign-in {
+      text-align: center;
+    }
   }
+  
 
   .nav {
     display: flex;
@@ -104,40 +99,6 @@ main{
     margin-bottom: 2.5rem;
   }
 
-  .main {
-      display: flex;
-      flex-wrap: wrap;
-
-      .container > #results {
-        color: #FFFFFF;
-        text-align: center;
-        margin-bottom: 2.5rem;
-        padding: 10px;
-      }
-  }
-
-  .row {
-    div:nth-child(2), div:nth-child(8) {
-      border-left: 2px solid #FFFFFF;
-      border-right: 2px solid #FFFFFF;
-    }
-
-    div:nth-child(5) {
-      border: 2px solid #FFFFFF;
-    }
-
-    div:nth-child(4), div:nth-child(6) {
-      border-top: 2px solid #FFFFFF;
-      border-bottom: 2px solid #FFFFFF;
-    }
-
-    div.box {
-      display: grid;
-      justify-content: center;
-      align-items: center;
-      font-size: 6.5rem;
-    }
-  }
 }
 
 #after-sign-in {
@@ -155,10 +116,50 @@ main{
   -webkit-text-fill-color: transparent;
 }
 
-#menu-create {
-  margin-top: 25px;
+#menuForms, #results {
+  margin: 4rem 2rem 0;
 }
 
-#menuForm {
-  margin-top: 4rem;
+#menuForms {
+  .accordion {
+    .accordion-item {
+      h2 {
+        .accordion-button:not(.collapsed) {
+          color: #000000;
+          background-color: rgba(65, 252, 242, 0.5);
+          box-shadow: inset 0 -1px 0 rgba(155, 235, 230, .3);
+        }
+
+        .accordion-button:focus {
+          z-index: 3;
+          border-color: #0F292F;
+          outline: 0;
+          box-shadow: 0 0 0 0.25rem rgba(15, 41, 47, .4)
+        }
+      }
+    }
+  }
+
+  form {
+    margin-bottom: 1.5rem;
+    border: none !important;
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        margin-bottom: .5rem;
+      }
+
+      input:last-of-type {
+        margin-bottom: 0px;
+      }
+
+      button {
+        margin: 1.5rem auto 0;
+        width: 35%;
+      }
+    }
+  }
 }

@@ -26,14 +26,6 @@ const onIndexSuccess = function (responseData) {
       <p>Description: ${menu.description}</p>
       <p>Calories: ${menu.calories}</p>
       <p>Price: ${menu.price}</p>
-      <form id="menu-update" class="menus-update-dynamic" data-id=${menu._id}>
-        <input type="text" name="menu[category]" placeholder="Menu Category" required>
-        <input type="text" name="menu[name]" placeholder="Name of dish" required>
-				<input type="text" name="menu[description]" placeholder="Description">
-				<input type="number" name="menu[calories]" placeholder="Calories">
-				<input type="text" name="menu[price]" placeholder="Price">
-        <button>Update Dish</button>
-      </form>
       <button class='menu-destroy-dynamic' data-id=${menu._id}>Delete Menu Item</button>
       <br>
     `
@@ -48,9 +40,12 @@ const onShowSuccess = function (responseData) {
 	// interact with it.
 	console.log(responseData)
 
+	let menusHtml = ''
+
 	// build HTML element with data for one menu
 	menusHtml += `
     <h4>Menu: ${responseData.menu.category}</h4>
+		<p>ID: ${responseData.menu._id}</p>
     <p>Name: ${responseData.menu.name}</p>
     <p>Description: ${responseData.menu.description}</p>
     <p>Calories: ${responseData.menu.calories}</p>
@@ -77,12 +72,6 @@ const onDestroySuccess = function () {
 	// add class for success messaging
 	$('#menu-display').addClass('success')
 
-	// use setTimeout to allow the success message to stay for 5 seconds before
-	// the message is replaced with '' and the 'success' class is removed
-	// setTimeout(() => {
-	// 	$('#menu-display').html('')
-	// 	$('#menu-display').removeClass('success')
-	// }, 5000)
 
 	// reset all forms
 	$('form').trigger('reset')

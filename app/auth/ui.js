@@ -25,6 +25,8 @@ const signInSuccess = function (responseData) {
 	store.user = responseData.user
 	console.log('store is ', store)
 
+	$('html').css('background', '#f2f2f2')
+
 	$('#after-sign-in-message').text('You have been successfully signed in!')
 
 	$('#after-sign-in-message').removeClass()
@@ -75,6 +77,7 @@ const changePasswordFailure = function (error) {
 }
 
 const signOutSuccess = function (responseData) {
+	$('html').css({'background':"url('https://i.imgur.com/mFOVMrX.png')", 'background-size':'cover'})
 	$('#menu-display').text('You have been signed out successfully')
 
 	$('#menu-display').removeClass()

@@ -65,6 +65,7 @@ const onUpdateMenu = function (event) {
 	// create a javascript object from the form (event.target) where the user entered
 	// the menu information
 	const menuData = getFormFields(event.target)
+	console.log(menuData)
 
 	// extract the id from our menuData's menu
 	const id = menuData.menu.id

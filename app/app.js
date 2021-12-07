@@ -16,6 +16,7 @@ $(() => {
 
 	$('#menu-create').on('submit', menuEvents.onCreateMenu)
 	$('#menu-search').on('click', menuEvents.onIndexMenus)
+	$('#menu-showOne').on('submit', menuEvents.onShowMenu)
 	$('#menu-update').on('submit', menuEvents.onUpdateMenu)
 	$('#menu-delete').on('submit', menuEvents.onDestroyMenu)
 })
