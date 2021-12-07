@@ -26,7 +26,7 @@ header {
   box-shadow: 8px 10px 8px 1px rgba(49, 49, 49, .6);
 }
 
-main{
+main {
   // display: grid;
   // justify-content: center;
   // padding-bottom: 2rem;
@@ -103,11 +103,23 @@ main{
 
 #after-sign-in {
   display: none;
-}
 
-.greyed-out {
-  background-color: #000000;
-  opacity: .40;
+  form#change-password, form#sign-out {
+    fieldset {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      legend {
+        width: 20%;
+      }
+
+      input {
+        margin-right: 12px;
+        line-height: normal;
+      }
+    }
+  }
 }
 
 .gradient-text {

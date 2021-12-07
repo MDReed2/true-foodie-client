@@ -25,7 +25,7 @@ const onIndexSuccess = function (responseData) {
       <p>Name: ${menu.name}</p>
       <p>Description: ${menu.description}</p>
       <p>Calories: ${menu.calories}</p>
-      <p>Price: ${menu.price}</p>
+      <p>Price: $${menu.price}</p>
       <button class='menu-destroy-dynamic' data-id=${menu._id}>Delete Menu Item</button>
       <br>
     `
@@ -36,6 +36,8 @@ const onIndexSuccess = function (responseData) {
 }
 
 const onShowSuccess = function (responseData) {
+	const menu = responseData.menu
+
 	// log the information we get back from the API so we know how we can
 	// interact with it.
 	console.log(responseData)
@@ -44,12 +46,12 @@ const onShowSuccess = function (responseData) {
 
 	// build HTML element with data for one menu
 	menusHtml += `
-    <h4>Menu: ${responseData.menu.category}</h4>
-		<p>ID: ${responseData.menu._id}</p>
-    <p>Name: ${responseData.menu.name}</p>
-    <p>Description: ${responseData.menu.description}</p>
-    <p>Calories: ${responseData.menu.calories}</p>
-    <p>Price: ${responseData.menu.price}</p>
+    <h4>Menu: ${menu.menu}</h4>
+		<p>ID: ${menu._id}</p>
+    <p>Name: ${menu.name}</p>
+    <p>Description: ${menu.description}</p>
+    <p>Calories: ${menu.calories}</p>
+    <p>Price: $${menu.price}</p>
     <br>
   `
 
@@ -115,12 +117,12 @@ const onCreateSuccess = function (responseData) {
 	// the menus again to see the newly created menu included
 	menusHtml += `
   	<div>
-      <h4>Menu Category: ${menu.category}</h4>
+      <h4>Menu Category: ${menu.menu}</h4>
 			<p>ID: ${menu._id}</p>
       <p>Name: ${menu.name}</p>
       <p>Description: ${menu.description}</p>
       <p>Calories: ${menu.calories}</p>
-      <p>Price: ${menu.price}</p>
+      <p>Price: $${menu.price}</p>
       <br>
 			<p>Menus have changed! Click "Get All Menus" again to see all the menu.</p>
 		</div>

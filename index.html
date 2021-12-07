@@ -87,14 +87,14 @@
         
           <nav class="navbar navbar-collapse-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-              <img src="https://icons.iconarchive.com/icons/iconsmind/outline/128/Smile-icon.png" width="30" height="30"
+              <img src="https://i.imgur.com/cQZk4lk.png" width="30" height="30"
                 class="d-inline-block align-top" alt="True Foodie">
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav text-white">
                   <!-- <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#"></a>
                   </li> -->
@@ -104,21 +104,22 @@
                     <!-- fieldset is used to group multiple inputs together -->
         
                     <!-- change password and sign out forms  -->
-                    <form id="change-password" class="border">
+                    <form id="change-password">
                       <fieldset>
                         <legend>Change Password</legend>
-                        <label for="old">Old Password:</label>
+                        <label for="old">Old Password: </label>
                         <input type="password" name="passwords[old]" id="old" placeholder="Enter Old Password" required />
-                        <label for="new">New Password:</label>
+                        <label for="new">New Password: </label>
                         <input type="password" name="passwords[new]" id="new" placeholder="Enter New Password" required />
-                        <button class="btn btn-primary">Change</button>
+                        <button class="btn btn-outline-info btn-sm">Change</button>
                       </fieldset>
                     </form>
-
-                    <form id="sign-out" class="border">
+                  </li>
+                  <li class="nav-item dropdown">
+                    <form id="sign-out">
                       <fieldset>
                         <legend>Sign Out</legend>
-                        <button class="btn btn-primary">Sign Out</button>
+                        <button class="btn btn-outline-info btn-sm">Sign Out</button>
                       </fieldset>
                     </form>
                   </li>
@@ -132,83 +133,6 @@
           </div>
 
           <section id="menuForms">
-            <!-- <h2>Create One Menu Item</h2>
-            <form id="menu-create" class="border">
-              <fieldset>
-                <label for="menu-category">Menu Category:</label>
-                <input type="text" name="menu[category]" placeholder="Enter Menu Category">
-                <label for="menu-name">Item Name:</label>
-                <input type="text" name="menu[name]" placeholder="Enter Item Name">
-                <label for="menu-description">Description:</label>
-                <input type="text" name="menu[description]" placeholder="Enter Menu Description">
-                <label for="menu-calories">Calories:</label>
-                <input type="text" name="menu[calories]" placeholder="Calories">
-                <label for="menu-price">Price:</label>
-                <input type="text" name="menu[price]" placeholder="Price">
-                <button class="btn btn-dark">Create Menu</button>
-              </fieldset>
-            </form>
-            <div id="menu-create-message">
-            
-            </div>
-            
-            <hr>
-
-            <h2>Get All Menus</h2>
-            <form class="menu" id="menu-search">
-              <fieldset>
-                <button class="btn btn-dark">Get All Menus</button>
-              </fieldset>
-              
-            </form>
-
-            <hr>
-
-            <h2>Show Menu Item</h2>
-            <form id="menu-showOne">
-              <fieldset>
-                <label for="show-menu-id">Item ID:</label>
-                <input type="text" name="menu[id]" placeholder="Menu Item ID">
-                <button class="btn btn-dark">Show One Menu</button>
-              </fieldset>
-            </form>
-
-            <hr>
-
-            <h2>Update Item</h2>
-            <form id="menu-update" class="menus-update-dynamic">
-              <fieldset>
-                <label for="menu-category">Category Name:</label>
-                <input type="text" name="menu[category]" placeholder="Menu Category" required>
-
-                <label for="menu-name">Item Name:</label>
-                <input type="text" name="menu[name]" placeholder="Name of dish" required>
-                
-                <label for="menu-description">Description:</label>
-                <input type="text" name="menu[description]" placeholder="Description">
-
-                <label for="menu-calories">Calories:</label>
-                <input type="number" name="menu[calories]" placeholder="Calories">
-
-                <label for="menu-price">Price:</label>
-                <input type="text" name="menu[price]" placeholder="Price">
-
-                <button class="btn btn-dark">Update Dish</button>
-              </fieldset>
-            </form>
-
-            <hr>
-
-            <h2>Delete Menu Item</h2>
-            <form id="menu-delete">
-              <fieldset>
-                <label for="show-menu-id">Item ID:</label>
-                <input type="text" name="menu[id]" placeholder="Menu Item ID">
-                <button class="btn btn-dark">Delete Menu item</button>
-              </fieldset>
-            </form>
-            <hr> -->
-
             <div class="accordion" id="menuAccordion">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="createMenuItem">
@@ -223,7 +147,7 @@
                     <form id="menu-create" class="border">
                       <fieldset>
                         <label for="menu-category">Menu Category:</label>
-                        <input type="text" name="menu[category]" placeholder="Enter Menu Category">
+                        <input type="text" name="menu[menu]" placeholder="Enter Menu Category">
                         <label for="menu-name">Item Name:</label>
                         <input type="text" name="menu[name]" placeholder="Enter Item Name">
                         <label for="menu-description">Description:</label>
@@ -292,7 +216,7 @@
                         <input type="text" name="menu[id]" placeholder="Menu Item ID">
 
                         <label for="menu-category">Category Name:</label>
-                        <input type="text" name="menu[category]" placeholder="Menu Category" required>
+                        <input type="text" name="menu[menu]" placeholder="Menu Category" required>
 
                         <label for="menu-name">Item Name:</label>
                         <input type="text" name="menu[name]" placeholder="Name of dish" required>
