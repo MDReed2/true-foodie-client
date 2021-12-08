@@ -175,3 +175,27 @@ main {
     }
   }
 }
+
+#card-results {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+
+  .card {
+    margin: 0 10px;
+
+    .card-body {
+      padding: 0;
+
+      .card-title {
+        background-color: #000000;
+        color: #FFFFFF;
+        padding: 15px;
+        text-align: center;
+      }
+      .card-text {
+        padding: 1rem 1rem;
+      }
+    }
+  }
+}

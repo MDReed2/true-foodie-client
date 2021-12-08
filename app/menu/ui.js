@@ -20,19 +20,21 @@ const onIndexSuccess = function (responseData) {
 		// button we want to delete
 		// add a data-id attribute for our dynamic edit form as well
 		menusHtml += `
-      <h4>Menu Category: ${menu.menu}</h4>
-			<p>ID: ${menu._id}</p>
-      <p>Name: ${menu.name}</p>
-      <p>Description: ${menu.description}</p>
-      <p>Calories: ${menu.calories}</p>
-      <p>Price: $${menu.price}</p>
-      <button class='menu-destroy-dynamic' data-id=${menu._id}>Delete Menu Item</button>
-      <br>
+			<div class="card col-4">
+				<div class="card-body">
+					<h5 class="card-title">Menu Category: ${menu.menu}</h5>
+					<p class="card-text">ID: ${menu._id}</p>
+					<p class="card-text">Name: ${menu.name}</p>
+					<p class="card-text">Description: ${menu.description}</p>
+					<p class="card-text">Calories: ${menu.calories}</p>
+					<p class="card-text">Price: $${menu.price}</p>
+				</div>
+			</div>
     `
 	})
 
 	// set the html for all of our menus all at once
-	$('#menu-display').html(menusHtml)
+	$('#card-results').html(menusHtml)
 }
 
 const onShowSuccess = function (responseData) {
