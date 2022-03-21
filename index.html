@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <!-- <h1>True Foodie</h1> -->
+      <!-- <header>
+        <h1>True Foodie</h1>
+      </header> -->
+      <main>
+        <section>
+          <div id="error-message">
+        
+          </div>
+          <div id="user-display">
+        
+          </div>
+        </section>
+        <section id="before-sign-in">
+          <header>
+            <h1>True Foodie</h1>
+            <h6>What's on the menu today?</h6>
+          </header>
+
+          <!-- Sign-up form goes here -->
+          <div class="card sign-up-card">
+            <form id="sign-up" class="card-body">
+              <h3>Sign Up</h3>
+        
+              <div>
+                <label for="sign-up-email">Email:</label>
+                <input type="email" id="em" name="credentials[email]" required>
+              </div>
+              <div>
+                <label for="sign-up-password">Password:</label>
+                <input type="password" id="ps" name="credentials[password]" required>
+              </div>
+              <div>
+                <label for="password_confirmation">Password Confirmation:</label>
+                <input type="password" id="psc" name="credentials[password_confirmation]" required>
+              </div>
+        
+              <button class="btn btn-dark">Sign Up</button>
+            </form>
+
+            <div class="needAccount">
+              <!-- <p id="pre-sign-up">Need an account? <button class="btn btn-outline-dark btn-sm">Sign Up</button></p> -->
+              <p id="back-to-sign-in"><button class="btn btn-outline-dark btn-sm">Back to Sign In</button></p>
+            </div>
+          </div>
+        
+        
+          <!-- Sign in -->
+          <div class="card sign-in-card">
+            <form id="sign-in" class="card-body">
+              <h3>Sign In</h3>
+              <div>
+                <label for="sign-in-email">Email:</label>
+                <input type="email" id="email" name="credentials[email]" required>
+              </div>
+              <div>
+                <label for="sign-in-password">Password:</label>
+                <input type="password" id="password" name="credentials[password]" required>
+              </div>
+        
+              <button class="btn btn-dark">Sign-in</button>
+            </form>
+
+            <div class="needAccount">
+              <p id="pre-sign-up">Need an account? <button class="btn btn-outline-dark btn-sm">Sign Up</button></p>
+              <!-- <p id="back-to-sign-in"><button class="btn btn-outline-dark btn-sm">Back to Sign In</button></p> -->
+            </div>
+          </div>
+        </section>
+
+        <!-- Change password and sign out section. This section should only show once signed in. By default should be hidden -->
+        <section id="after-sign-in">
+        
+          <nav class="navbar navbar-collapse-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+              <img src="https://i.imgur.com/cQZk4lk.png" width="30" height="30"
+                class="d-inline-block align-top" alt="True Foodie">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav text-white">
+                  <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"></a>
+                  </li> -->
+        
+                  <li class="nav-item dropdown">
+                    <!-- <form id="change-password"> -->
+                    <!-- fieldset is used to group multiple inputs together -->
+        
+                    <!-- change password and sign out forms  -->
+                    <form id="change-password">
+                      <fieldset>
+                        <legend>Change Password</legend>
+                        <label for="old">Old Password: </label>
+                        <input type="password" name="passwords[old]" id="old" placeholder="Enter Old Password" required />
+                        <label for="new">New Password: </label>
+                        <input type="password" name="passwords[new]" id="new" placeholder="Enter New Password" required />
+                        <button class="btn btn-outline-info btn-sm">Change</button>
+                      </fieldset>
+                    </form>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <form id="sign-out">
+                      <fieldset>
+                        <legend>Sign Out</legend>
+                        <button class="btn btn-outline-info btn-sm">Sign Out</button>
+                      </fieldset>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div id="after-sign-in-message">
+
+          </div>
+
+          <section id="menuForms">
+            <div class="accordion" id="menuAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="createMenuItem">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Create One Menu Item
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="createMenuItem"
+                  data-bs-parent="#menuAccordion">
+                  <div class="accordion-body">
+                    <form id="menu-create" class="border">
+                      <fieldset>
+                        <label for="menu-category">Menu Category:</label>
+                        <input type="text" name="menu[menu]" placeholder="Enter Menu Category">
+                        <label for="menu-name">Item Name:</label>
+                        <input type="text" name="menu[name]" placeholder="Enter Item Name">
+                        <label for="menu-description">Description:</label>
+                        <input type="text" name="menu[description]" placeholder="Enter Menu Description">
+                        <label for="menu-calories">Calories:</label>
+                        <input type="text" name="menu[calories]" placeholder="Calories">
+                        <label for="menu-price">Price:</label>
+                        <input type="text" name="menu[price]" placeholder="Price">
+                        <button class="btn btn-dark">Create Menu</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="indexMenus">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                    aria-expanded="false" aria-controls="collapseTwo">
+                    Get All Menus
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="indexMenus"
+                  data-bs-parent="#menuAccordion">
+                  <div class="accordion-body">
+                    <form class="menu" id="menu-search">
+                      <fieldset>
+                        <button class="btn btn-dark">Get All Menus</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="showMenuItem">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                    aria-expanded="false" aria-controls="collapseThree">
+                    Show Menu Item
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="showMenuItem"
+                  data-bs-parent="#menuAccordion">
+                  <div class="accordion-body">
+                    <form id="menu-showOne">
+                      <fieldset>
+                        <label for="show-menu-id">Item ID:</label>
+                        <input type="text" name="menu[id]" placeholder="Menu Item ID">
+                        <button class="btn btn-dark">Show One Menu</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="updateItem">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                    aria-expanded="false" aria-controls="collapseFour">
+                    Update Menu Item
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="updateItem"
+                  data-bs-parent="#menuAccordion">
+                  <div class="accordion-body">
+                    <form id="menu-update" class="menus-update-dynamic">
+                      <fieldset>
+                        <label for="update-menu-id">Item ID:</label>
+                        <input type="text" name="menu[id]" placeholder="Menu Item ID">
+
+                        <label for="menu-category">Category Name:</label>
+                        <input type="text" name="menu[menu]" placeholder="Menu Category" required>
+
+                        <label for="menu-name">Item Name:</label>
+                        <input type="text" name="menu[name]" placeholder="Name of dish" required>
+            
+                        <label for="menu-description">Description:</label>
+                        <input type="text" name="menu[description]" placeholder="Description">
+            
+                        <label for="menu-calories">Calories:</label>
+                        <input type="number" name="menu[calories]" placeholder="Calories">
+            
+                        <label for="menu-price">Price:</label>
+                        <input type="text" name="menu[price]" placeholder="Price">
+            
+                        <button class="btn btn-dark">Update Dish</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="deleteItem">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                    aria-expanded="false" aria-controls="collapseFive">
+                    Delete Menu Item
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="deleteItem"
+                  data-bs-parent="#menuAccordion">
+                  <div class="accordion-body">
+                    <form id="menu-delete">
+                      <fieldset>
+                        <label for="show-menu-id">Item ID:</label>
+                        <input type="text" name="menu[id]" placeholder="Menu Item ID">
+                        <button class="btn btn-dark">Delete Menu item</button>
+                      </fieldset>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+        
+        <section id="results">
+          <div id="error-menu">
+        
+          </div>
+          <div id="menu-display">
+            <div id="card-results">
+            
+            </div>
+          </div>
+        </section>
+      </main>
+    </body>
+</html>
