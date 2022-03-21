@@ -28,6 +28,8 @@ This application allows the user (restaurant owners) to do sign up for an accoun
 - HTML/CSS
 - Bootstrap
 - Javascript
+- Node.JS
+- Express.JS
 
 ### Unsolved Problems
 
